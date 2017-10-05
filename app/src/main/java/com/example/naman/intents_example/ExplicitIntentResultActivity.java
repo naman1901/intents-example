@@ -9,6 +9,9 @@ import android.widget.EditText;
 
 public class ExplicitIntentResultActivity extends AppCompatActivity {
 
+    /**
+     * This activity will fetch the data from its EditText box and return it in an intent to MainActivity
+     */
 
     Button res;
 

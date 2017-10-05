@@ -11,6 +11,13 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * This app is an example of how intents work in Android.
+     * There are 2 kinds of intents - Explicit (where you mention the activity you want to launch)
+     *                                Implicit (where you leave the choice of activity to the user and the Android system)
+     * Intents can be used to launch activity only, or to launch new activity and get some result from it.
+     */
+
     static final int RENAME_REQUEST = 1;
 
     Button expl, explRes, impl;
@@ -28,6 +35,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
+        /**
+         * Receive the result from ExplicitIntentResultActivity
+         * Set the received string to this Activity's EditText box
+         */
         if(requestCode==RENAME_REQUEST) {
             if(resultCode==RESULT_OK) {
                 String newName = data.getStringExtra("newName");
@@ -36,10 +48,17 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This function adds listeners to the buttons that fire intents on being clicked.
+     */
     private void AddButtonListeners() {
 
         textBox = (EditText) findViewById(R.id.text);
 
+        /**
+         * Explicit intent where we don't return any result.
+         * This example takes the text entered in the EditText box and passes it to the next activity
+         */
         expl = (Button) findViewById(R.id.exp_intent);
         expl.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +71,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Explicit intent where we return a result.
+         * This part of the code launches the new activity.
+         * RENAME_REQUEST is a constant defined by us.
+         */
         explRes = (Button) findViewById(R.id.exp_intent_res);
         explRes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +85,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Implicit intent where we try to dial a number
+         * This part fetches the number string input in the EditText box, parses it into a URI object,
+         * and sends the intent to the android system which will handle the rest.
+         */
         impl = (Button) findViewById(R.id.imp_intent);
         impl.setOnClickListener(new View.OnClickListener() {
             @Override

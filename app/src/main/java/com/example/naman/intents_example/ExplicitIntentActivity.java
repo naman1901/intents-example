@@ -8,6 +8,11 @@ import android.widget.Toast;
 
 public class ExplicitIntentActivity extends AppCompatActivity {
 
+    /**
+     * This activity will retrieve the intent that launched it, and extract the string we passed in the intent,
+     * and set this text in a TextView box.
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
