@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.naman.intents_example.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textSize="32sp"
+        android:text="Intents Example"
+        android:gravity="center"/>
+
+    <EditText
+        android:layout_margin="16dp"
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your text here..."
+        android:gravity="center"
+        android:textSize="16sp"/>
+
+    <Button
+        android:layout_margin="16dp"
+        android:id="@+id/exp_intent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Explicit Intent"/>
+
+    <Button
+        android:layout_margin="16dp"
+        android:id="@+id/exp_intent_res"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Explicit Intent with Result"/>
+
+    <Button
+        android:layout_margin="16dp"
+        android:id="@+id/imp_intent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="Implicit Intent - Dial Number"/>
+
+
+</LinearLayout>
